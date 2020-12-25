@@ -38,7 +38,7 @@ with open('/Users/nikhil/code/Newtext/Matchtxt/swim_ba_agn_cut.txt') as f:
      
 #Read each galaxy data
 i=0
-for i in range (0,1):#np.shape(Line0)[0]):
+for i in range (0,np.shape(Line0)[0]):
  #get galaxy info from drpall
  drpall = fits.open('/Users/nikhil/Data/MaNGAPipe3D/Newmanga/drpall-v2_3_1.fits')
  tbdata = drpall[1].data
