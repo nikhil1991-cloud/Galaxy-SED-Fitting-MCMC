@@ -108,8 +108,8 @@ for i in range (0,np.shape(Line0)[0]):
  Initial_Z = 0.2
  
  #dof for regression and mcmc
- dof_mcmc = len(m1_list) + len(Lick_list)
- dof_lr = len(m1_list) + len(Lick_list) + 1 - len(Ages)
+ dof_mcmc = len(m1_list) + len(Lick_list) - 1 # (colours + lick indices + 1 Dn4000) - 2
+ dof_lr = len(m1_list) + len(Lick_list) + 1 - len(Ages) #(colours + lick indices + 1 Dn4000) - Ages. (colours + lick indices + 1 Dn4000) > Ages always
  
  #compute model observables for given Z and E using code sfr.py
  Given_Z = Initial_Z
