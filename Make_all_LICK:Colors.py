@@ -38,8 +38,8 @@ time_start = time.clock()
 hdu = fits.open("/Users/nikhil/Data/MaNGAPipe3D/manga-7495-12703-LOGCUBE.fits")
 Waveh = hdu['WAVE'].data
 
-with open('/Users/nikhil/code/Newtext/Matchtxt/TOT.txt') as f:
-    Line0 = [line.rstrip('\n') for line in open('/Users/nikhil/code/Newtext/Matchtxt/TOT.txt')]
+with open('/Users/nikhil/code/Newtext/Matchtxt/SwiM_ID.txt') as f:
+    Line0 = [line.rstrip('\n') for line in open('/Users/nikhil/code/Newtext/Matchtxt/Swim_ID.txt')]
 IZ =np.zeros(np.shape(Line0))
 q=0
 for q in range (0,np.shape(Line0)[0]):
