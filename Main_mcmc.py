@@ -178,30 +178,7 @@ for i in range (0,np.shape(Line0)[0]):
  OUTPUT = np.array(output_parameters)
  OUTPUT[:,0] = OUTPUT[:,0]/dof_mcmc #Reduced chi-square
 
- plt.subplot(2,2,1)
- plt.scatter(OUTPUT[:,3],OUTPUT[:,7],c=OUTPUT[:,0],s=20,vmin=OUTPUT[:,0].min(),vmax=OUTPUT[:,0].max())
- plt.scatter(Dn4000_data,Lick_indices_data[21],c='k',s=35)
- plt.xlabel('Dn4000')
- plt.ylabel('HdA')
- 
- plt.subplot(2,2,2)
- plt.scatter(OUTPUT[:,8],OUTPUT[:,10],c=OUTPUT[:,0],s=20,vmin=OUTPUT[:,0].min(),vmax=OUTPUT[:,0].max())
- plt.scatter(Model_MAGS[0]-Model_MAGS[3],Model_MAGS[4]-Model_MAGS[6],c='k',s=35)
- plt.xlabel('w2-u')
- plt.ylabel('g-i')
- 
- plt.subplot(2,2,3)
- plt.scatter(OUTPUT[:,3],OUTPUT[:,4],c=OUTPUT[:,0],s=20,vmin=OUTPUT[:,0].min(),vmax=OUTPUT[:,0].max())
- plt.scatter(Dn4000_data,Lick_indices_data[3],c='k',s=35)
- plt.xlabel('Dn4000')
- plt.ylabel('Fe4383')
- 
- plt.subplot(2,2,4)
- plt.scatter(OUTPUT[:,1],OUTPUT[:,2],c=OUTPUT[:,0],s=20,vmin=OUTPUT[:,0].min(),vmax=OUTPUT[:,0].max())
- plt.xlabel('[Fe/H]')
- plt.ylabel('E(B-V)')
-
  #Generate a header file
- #hdu0 = fits.PrimaryHDU(OUTPUT)
- #new_hdul = fits.HDUList([hdu0])
- #new_hdul.writeto("/Volumes/Nikhil/MCMC_New/New_sampling/MCMC_Integrated/"+str(Line0[i])+"-STATS_1bin.fits")
+ hdu0 = fits.PrimaryHDU(OUTPUT)
+ new_hdul = fits.HDUList([hdu0])
+ new_hdul.writeto("/Volumes/Nikhil/MCMC_New/New_sampling/MCMC_Integrated/"+str(Line0[i])+"-STATS_1bin.fits")
